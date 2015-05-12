@@ -1,0 +1,3 @@
+
+./mongoexport -u {username} -p {pswd} --authenticationDatabase admin -d {db} -c {collection} -q '{"time":{"$gt":1412092800000, $lt : 1419868800000}}' -f field1,field2 --csv -o /tmp/records.csv
+

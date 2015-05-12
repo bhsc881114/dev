@@ -1,0 +1,1 @@
+select mobile from aaa where nick  in('','') into outfile '/tmp/user.txt' fields terminated by ','; 
