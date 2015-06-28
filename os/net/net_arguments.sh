@@ -12,16 +12,19 @@ sysctl ipv4.tcp_fastopen
 
 echo "-------------------------check syn flood------------------------------"
 
-echo "client send syn,if not recevie server syn+ack,retry(default 5,30s interval):\c"
+echo "client send syn,if not recevie server syn+ack,retry(default 5,30s interval):/c"
 sysctl net.ipv4.tcp_syn_retries
+echo ""
 
-echo "after server send syn+ack,if not recevie ack,retry(default 5,30s interval):\c"
+echo "after server send syn+ack,if not recevie ack,retry(default 5,30s interval):/c"
 sysctl net.ipv4.tcp_synack_retries
+echo ""
 
-echo "server enable SYN Cookie(1 means enable):\c"
+echo "server enable SYN Cookie(1 means enable):/c"
 sysctl net.ipv4.tcp_syncookies
+echo ""
 
-echo "server max accept queue length(small than  /proc/sys/net/core/somaxconn):\c"
+echo "server max accept queue length(small than  /proc/sys/net/core/somaxconn):/c"
 sysctl net.ipv4.tcp_max_syn_backlog
 echo "/proc/sys/net/core/somaxconn:\c":
 cat /proc/sys/net/core/somaxconn
