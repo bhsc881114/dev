@@ -16,7 +16,7 @@ sysctl net.ipv4.tcp_keepalive_intvl
 
 echo "-------------------------check syn flood---------------------------"
 
-echo -n "client send syn,if not recevie server syn+ack,retry(default 5,3s or 30s？ interval):"
+echo -n "client send syn,if not recevie server syn+ack,retry(default 5,3s or 30s? interval):"
 sysctl net.ipv4.tcp_syn_retries
 echo ""
 
@@ -35,6 +35,7 @@ cat /proc/sys/net/core/somaxconn
 
 echo -n "FIN-WAIT-2 time:"
 sysctl net.ipv4.tcp_fin_timeout
+echo ""
 
 echo "--------------------------check time_wait-------------------------"
 
@@ -49,6 +50,7 @@ echo ""
 
 echo -n "control time_awit connections number:(not in common use）"
 sysctl ipv4.tcp_max_tw_buckets
+echo ""
 
 echo "-------------------------check buffer-----------------------------"
 
@@ -71,6 +73,7 @@ sysctl net.ipv4.tcp_mtu_probing
 echo "-------------------------check tcp rtp-----------------------------"
 echo -n "-------------rtt/rvg-------------"
 ip tcp_metrics
+echo ""
 
 echo -n "-------------rto-------------"
 ss -eipn 
